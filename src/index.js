@@ -6,4 +6,4 @@ import App from './App';
 import Main from './components/Main'
 
 
-render(<Main />, document.getElementById('root'));
+render(<Main />, document.getElementById('app'));
