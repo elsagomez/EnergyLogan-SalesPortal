@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "^0.8.5"
+    "react-scripts": "0.8.5",
+    "babel-loader": "^7.1.1",
+    "react-svg-loader": "^1.1.1"
   },
   "dependencies": {
     "array-flatten": "^2.1.1",
@@ -22,6 +24,7 @@
     "jwks-rsa": "^1.2.0",
     "jwt-decode": "^2.1.0",
     "node-sass-chokidar": "0.0.3",
+    "pui-react-collapse": "^8.3.1",
     "react": "^15.4.2",
     "react-bootstrap": "^0.31.1",
     "react-components-form": "^2.7.1",

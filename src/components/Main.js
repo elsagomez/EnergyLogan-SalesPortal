@@ -17,7 +17,10 @@ class Main extends React.Component{
 	//}
 	render(){
 		return(
-			//rendering main div here
+
+      
+
+		
 			<div className="main-container">
         <div className="container">
             <div className="container-fluid">
