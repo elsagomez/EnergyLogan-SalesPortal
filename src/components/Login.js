@@ -1,6 +1,4 @@
 import React from 'react';
-import { Form, TextField, SubmitField } from 'react-components-form';
-import Schema from 'form-schema-validation';
 
 import {
   Panel,
@@ -8,25 +6,27 @@ import {
   FormControl,
   Checkbox,
   Radio,
-  InputGroup
+  InputGroup,
+  Form
+
 } from 'react-bootstrap';
 
 import FormControlFeedback from 'react-bootstrap/lib/FormControlFeedback';
 import FormControlStatic from 'react-bootstrap/lib/FormControlStatic';
 import InputGroupAddon from 'react-bootstrap/lib/InputGroupAddon';
 
-const loginSchema = new Schema({
+// const loginSchema = new Schema({
   
-  login:{
-    type: String, 
-    required: true
-  },
+//   login:{
+//     type: String, 
+//     required: true
+//   },
 
-  password:{
-    type: String, 
-    required: true
-  } 
-});
+//   password:{
+//     type: String, 
+//     required: true
+//   } 
+// });
 
 class Login extends React.Component {
   render(){
@@ -38,7 +38,7 @@ class Login extends React.Component {
           <h1 className="login-brand-text">Login Portal!</h1>
      
         <Panel header className="login-panel">  
-          <Form schema={loginSchema}
+          <Form
           onSubmit={data => console.log(data)}
           onError={(errors, data) => console.log('error', errors, data)}
           >

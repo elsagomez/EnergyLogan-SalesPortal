@@ -1,6 +1,8 @@
 import React from 'react';
 //import ReactDom from 'react-dom';
 import {Link} from 'react-router';
+import '../App.scss';
+
 //import helper from '../utils/helpers';
 
 //children
