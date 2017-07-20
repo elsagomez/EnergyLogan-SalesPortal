@@ -5,9 +5,9 @@ class TopNav extends Component {
 		return (
 			<nav>
 				<div className="navbar">
-					<a href="#">Link 1</a>
-					<a href="#">Link 2</a>
-					<a href="#">Link 3</a>
+					<a href="#">EnergyLeads/Home</a>
+					<a href="#">Account</a>
+					<a href="#">Logout</a>
 				</div>				
 			</nav>
 		)
