@@ -1,6 +1,8 @@
 import React from 'react';
 //import ReactDom from 'react-dom';
 import {Link} from 'react-router';
+import '../App.scss';
+
 //import helper from '../utils/helpers';
 
 //children
@@ -15,7 +17,10 @@ class Main extends React.Component{
 	//}
 	render(){
 		return(
-			//rendering main div here
+
+      
+
+		
 			<div className="main-container">
         <div className="container">
             <div className="container-fluid">
