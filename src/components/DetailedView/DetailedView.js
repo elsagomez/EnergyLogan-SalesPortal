@@ -1,18 +1,67 @@
 import React, {Component} from 'react';
 import { Bootstrap } from 'react-bootstrap';
-
+import FinancialData from './FinancialData';
+import TableDetailedView from './TableDetailedView';
+import GraphView from './GraphView';
 import detailedview from './detailedview.css';
 import helpers from '../../utils/helpers';
 
 class DetailedView extends Component{
 
-    
+    constructor(props) {
+        super();
+        this.state = {
+            chartData: {}
+        };
+        // this.getChartData = this.getChartData.bind(this);
+    }
+
+
+    componentWillMount() {
+        this.getChartData();
+    }
+
+    getChartData() {
+
+        //TODO: AJAX call here!!!!!
+
+        this.setState({
+            chartData: {
+
+                title: {
+                    text: "ANNUAL ENERGY SAVINGS",
+                    fontSize: 25
+                },
+                yAxisID: 0,
+
+                labels: ["Existing", "Proposed"],
+
+                datasets: [{
+                    label: "Savings",
+                    data: [15706, 5431],
+                     backgroundColor: [
+                    'rgba(255,166,22,.7)',
+                    'rgba(0,0,0,.7)'
+                ]
+                }],
+               
+            }
+
+        })
+    }
+
 
 render() {
         return (
              <div className="container">
              <page size="A4">
+             <div id="header">
+
+             <h1 className="text-right"><b>YOUR COMPANY NAME</b></h1>
+
+             </div>
         <h1 id="makeityellow"><b>LIGHTING PROPOSAL: <span className="text-danger"> THE PROJECT</span></b></h1>
+        <hr />
     <div className="row">
 
 
@@ -26,59 +75,13 @@ given the following considerations:</p>
     <li>Occupant experience and safety</li>
     <li>Consideration of upfront costs</li>
 </ul>
-<p>We have included incentive and rebate opportunities where applicable</p>
+<p>We have included incentive and rebate opportunities where applicable.</p>
 </div>
-<hr />
- <div className="col-xs-12">
- <h2><b>FINANCIAL ANALYSIS</b></h2>
- <hr />
-<table className="table table-bordered">
-<tbody>
-    <tr>
-    <td><b>Project Cost</b></td>
-        <td className="text-danger">$9,028</td>
-    </tr>
-    <tr>
-        <td><b>Annual Energy Savings</b></td>
-        <td className="text-danger">$1,027</td>
-    </tr>
-     <tr>
-        <td><b>Rebate Amount</b></td>
-        <td className="text-danger">$2,270</td>
-    </tr>
-     <tr>
-        <td><b>Net Cost</b></td>
-        <td className="text-danger">$6,758</td>
-    </tr>
-     <tr>
-        <td><b>kWh saved</b></td>
-        <td className="text-danger">10,275</td>
-    </tr>
-     <tr>
-        <td><b>kWh Rate</b></td>
-        <td className="text-danger">$0.10</td>
-    </tr>
-     <tr>
-        <td><b>Reduced Maintenance Costs</b></td>
-        <td className="text-danger">$1,570</td>
-    </tr>
-    <tr>
-        <td><b>Payback</b></td>
-        <td className="text-danger">2.6 years</td>
-    </tr>
-    <tr>
-        <td><b>ROI</b></td>
-        <td className="text-danger">38%</td>
-    </tr>
-    <tr>
-        <td><b>10 Year Life Cycle Savings</b></td>
-        <td className="text-danger">$19,224</td>
-    </tr>
-</tbody>
-</table>
 </div>
 
-<div className="col-xs-12">
+<br /><br />
+<div className="row">
+<div className="col-xs-6">
     <h2><b>SCOPE OF WORK</b></h2>
     <hr /> 
     <p><b>Project Recommendations</b></p>
@@ -89,21 +92,39 @@ given the following considerations:</p>
         <li>Applying for utility Incentives to Offset project costs</li>
     </ul>
 </div>
+
+
+
+<div className="col-xs-6">
+ <GraphView chartData = { this.state.chartData } /> 
+ </div>
+
+ </div>
+ <div className="row">
+
+
+<FinancialData />
+
+
 </div>
+ <br /><br />
+ </page>
+
+<page size="A4">
+
+<TableDetailedView />
 </page>
-<page>
-
-
-
-
-
-</page>
-
-
-
-
-
 </div>
+
+
+
+
+
+
+
+
+
+
       
             )
     }

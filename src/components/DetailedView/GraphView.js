@@ -17,7 +17,7 @@ class GraphView extends Component{
                 <Bar
                     data={this.state.chartData}
                     width={50}
-                    height={20}
+                    height={30}
                     options={{
                         scales: {
                             yAxes: [{
@@ -29,7 +29,7 @@ class GraphView extends Component{
 
                        title:{
                         display: true,
-                        text:"Annual Energy Savings",
+                        text:"ANNUAL ENERGY SAVINGS",
                         fontSize: 25
                        },
 
@@ -40,9 +40,10 @@ class GraphView extends Component{
                     }}
 
                     />
+</div>
 
-            CHART cOMPONENT
-            </div>
+
+
 
             )
     }
