@@ -6,7 +6,7 @@ class GraphView extends Component{
         super(props);
         this.state = {
             chartData:props.chartData
-        }
+        };
     }
 
    
