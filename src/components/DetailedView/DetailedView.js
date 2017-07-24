@@ -7,6 +7,50 @@ import helpers from '../../utils/helpers';
 
 class DetailedView extends Component{
 
+    constructor(props){
+        super();
+        this.state= {}
+}
+   
+
+    componentWillMount(){
+        this.getChartData();
+    }  
+
+    getChartData(){
+
+            //TODO: AJAX call here!!!!!
+
+        this.setState({
+            chartData:{
+
+                         title:{
+                        text:"Annual Energy Savings",
+                        fontSize: 25
+                       },     
+                       yAxisID:0
+            },
+
+                labels: [ "Existing", "Proposed"],
+
+                    datasets: [
+                {
+                    label: "Savings",
+                    data: [15706, 5431],
+                    backgroundColor:[
+                'rgba(255,22,64,.9)',
+                'rgba(255,23,98,.7)']
+                    
+                },
+                
+                ],
+
+               
+
+               
+        })
+        }
+   
 
 render() {
 		return (
@@ -95,7 +139,7 @@ given the following considerations:</p>
 
 <TableDetailedView />
 
-<GraphView legendPosition="top"/>
+<GraphView chartData={this.state.chartData}/>
 
 </page>
 

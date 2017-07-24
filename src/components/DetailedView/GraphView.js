@@ -5,25 +5,11 @@ class GraphView extends Component{
     constructor(props){
         super(props);
         this.state = {
-            chartData:{
-                labels: ["existing", "proposed"],
-                datasets: [
-                {
-                   
-                    data: [1000, 670],
-                    backgroundColor: [
-                    "rgba(255,99, 132, .9)",
-                    "rgba(255,206,86,.9)"]
-                }]
-            }
+            chartData:props.chartData
         }
     }
 
-    static defaultProps= {
-        displayTitle: false,
-        displayLegend: true,
-        legendPosition: "right"
-    }
+   
 
     render(){
         return(
@@ -33,15 +19,23 @@ class GraphView extends Component{
                     width={50}
                     height={20}
                     options={{
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+            }
+        }]
+    },
+
                        title:{
-                        display:this.props.displayTitle,
+                        display: true,
                         text:"Annual Energy Savings",
                         fontSize: 25
                        },
 
+
                        legend:{
-                        display: this.props.displayLegend,
-                        position: this.props.legendPosition
+                        display: false,
                        }
                     }}
 
